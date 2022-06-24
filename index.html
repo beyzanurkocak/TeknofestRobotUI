@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <title>ROS Mapping</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="script" href="webui.js"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body class="bg-light">
+
+            <!--NAVBAR -->
+            <nav class="navbar navbar-expand-md navbar-dark">
+              <div class="d-flex w-50 order-0">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+              </div>
+              <div class="navbar-collapse collapse justify-content-center order-4" id="collapsingNavbar">
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="#">Robot<span class="sr-only">Home</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="connection.html">Bağlantı</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Manuel</a>
+                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Dökümanlar</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Profil</a>
+                    </li>
+                  </ul>
+              </div>
+              <span class="navbar-text small text-truncate mt-1 w-50 text-right order-1 order-md-last">always show</span>
+          </nav>
+
+          <!--CARDS-->
+          <div class="container">
+            <div class="row my-4">
+                <div class="col col-md-3">
+                    <div class="card h-100">
+                      <div class="card-body robot-infos__top">
+                        <span class="robot-card__info-top">Hız</span>
+                        <div class="robot-card__info-bottom">
+                          <span class="robot-card__info-bottom__left robot-speed">5 m/s</span>
+                          <img src="" alt="" class="robot-card__info-bottom__right">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col col-md-3">
+                  <div class="card h-100">
+                      <p class="card-body">Yük Bilgileri</p>
+                  </div>
+              </div>
+              <div class="col col-md-3">
+                <div class="card h-100">
+                    <p class="card-body">Batarya Bilgileri</p>
+                </div>
+            </div>
+            <div class="col col-md-3">
+              <div class="card h-100">
+                  <p class="card-body">Sıcaklık Bilgileri</p>
+              </div>
+          </div>
+            </div>
+        </div>
+
+    <!-- SPEED -->
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class=" col-md-4">
+      <label for="robot-speed">
+          <p class="robot-speed">Robot Hızı</p>
+      </label>
+      <input type="range" min="15" max="80" class="custom-range" id="robot-speed">
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+<!-- VIDEO -->
+<div class="row my-4">
+  <div class="col d-flex justify-content-center">
+      <img src="" class="p-1 bg-dark" alt="" id="video" />
+  </div>
+</div>
+
+<!-- JOYSTICK -->
+<div class="row my-4">
+  <div class="col">
+      <div class="d-flex justify-content-center" style="width: 210px; height: 210px;">
+          <div id="joystick"></div>
+      </div>
+  </div>
+</div>
+
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!-- Additional Scripts -->
+<script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+<script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+<script src="https://static.robotwebtools.org/keyboardteleopjs/current/keyboardteleop.min.js"></script>
+<script src="//yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js"></script>
+<script src="webui.js"></script>
+
+<div class="wrapper">
+  <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+  <button id="button-start">Start</button>
+  <button id="button-stop">Stop</button>
+  <button id="button-reset">Reset</button>
+  </div> 
+
+  </body>
+</html>
